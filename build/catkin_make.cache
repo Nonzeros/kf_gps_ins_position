@@ -1,0 +1,2 @@
+basepart:gazebosensorplugins:learn_topic:learntransform:myguide:pozyx_simulation:rosmsgs
+-DCATKIN_DEVEL_PREFIX=/home/ouyy/MyRosGuideCar/devel -DCMAKE_INSTALL_PREFIX=/home/ouyy/MyRosGuideCar/install -G Unix Makefiles

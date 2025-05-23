@@ -1,0 +1,55 @@
+<!-- gps相关的 xacro 文件 -->
+<robot name="my_gps" xmlns:xacro="http://wiki.ros.org/xacro">
+    <!-- gps属性 -->
+    <xacro:property name="gps_length" value="0.012" /> <!-- gps长度(x) -->
+    <xacro:property name="gps_width" value="0.012" /> <!-- gps宽度(y) -->
+    <xacro:property name="gps_height" value="0.01" /> <!-- gps高度(z) -->
+    <xacro:property name="gps_x" value="-0.04" /> <!-- gps安装的x坐标 -->
+    <xacro:property name="gps_y" value="0.02" /> <!-- gps安装的y坐标 -->
+    <xacro:property name="gps_z" value="${base_link_length / 2 + gps_height / 2}" /> <!-- gps安装的z坐标:底盘高度 / 2 + gps高度 / 2  -->
+
+    <xacro:property name="gps_m" value="0.01" /> <!-- gps质量 -->
+
+    <!-- gps关节以及link -->
+    <link name="gps">
+        <visual>
+            <geometry>
+                <box size="${gps_length} ${gps_width} ${gps_height}" />
+            </geometry>
+            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${gps_length} ${gps_width} ${gps_height}" />
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </collision>
+        <xacro:Box_inertial_matrix m="${gps_m}" l="${gps_length}" w="${gps_width}" h="${gps_height}" />
+    </link>
+
+    <joint name="gps2base_link" type="fixed">
+        <parent link="base_link" />
+        <child link="gps" />
+        <origin xyz="${gps_x} ${gps_y} ${gps_z}" rpy="0.0 0.0 -1.5707963" />
+    </joint>
+    <gazebo reference="gps">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo>  
+        <plugin name="gps" filename="libhector_gazebo_ros_gps.so">  
+            <updateRate>10.0</updateRate>  
+            <topicName>sensor_msgs/NavSatFix</topicName>  
+            <velocityTopicName>sensor_msgs/NavSatFix_Velocity</velocityTopicName> 
+            <referenceLatitude>22.799674</referenceLatitude>
+            <referenceLongitude>113.959796</referenceLongitude>
+            <referenceHeading>90</referenceHeading>
+            <referenceAltitude>0</referenceAltitude>
+            <gaussianNoise>0.2 0.2 0.0</gaussianNoise>  
+            <offset>0 0 0</offset>  
+            <velocityGaussianNoise>0.01 0.01 0</velocityGaussianNoise>  
+            <frameId>gps</frameId>  
+        </plugin>  
+    </gazebo>
+</robot>

@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/devel
+
+Name: myguide
+Description: Description of myguide
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

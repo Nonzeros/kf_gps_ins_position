@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ouyy/MyRosGuideCar/src/myguide/include/myguide/KFApp.h
+myguide/PSINS.h
+/home/ouyy/MyRosGuideCar/src/myguide/include/myguide/myguide/PSINS.h
+
+/home/ouyy/MyRosGuideCar/src/myguide/include/myguide/PSINS.h
+float.h
+-
+math.h
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+stdarg.h
+-
+time.h
+-
+conio.h
+-
+conio.h
+/home/ouyy/MyRosGuideCar/src/myguide/include/myguide/conio.h
+../uart/serialport.h
+/home/ouyy/MyRosGuideCar/src/myguide/include/uart/serialport.h
+afx.h
+/home/ouyy/MyRosGuideCar/src/myguide/include/myguide/afx.h
+
+/home/ouyy/MyRosGuideCar/src/myguide/src/KFApp.cpp
+myguide/KFApp.h
+/home/ouyy/MyRosGuideCar/src/myguide/src/myguide/KFApp.h
+

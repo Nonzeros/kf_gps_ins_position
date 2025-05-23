@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/install
+
+Name: basepart
+Description: Description of basepart
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

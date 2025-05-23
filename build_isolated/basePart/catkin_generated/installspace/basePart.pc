@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/install_isolated
+
+Name: basePart
+Description: Description of basePart
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

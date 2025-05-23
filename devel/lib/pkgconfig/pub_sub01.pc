@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/devel
+
+Name: pub_sub01
+Description: Description of pub_sub01
+Version: 0.0.0
+Cflags: -I/home/ouyy/MyRosGuideCar/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs message_runtime

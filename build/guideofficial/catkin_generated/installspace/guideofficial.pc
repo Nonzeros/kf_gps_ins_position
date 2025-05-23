@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/install
+
+Name: guideofficial
+Description: Description of guideofficial
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

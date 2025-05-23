@@ -1,0 +1,55 @@
+<!-- imu相关的 xacro 文件 -->
+<robot name="my_imu" xmlns:xacro="http://wiki.ros.org/xacro">
+    <!-- imu属性 -->
+    <xacro:property name="imu_length" value="0.012" /> <!-- imu长度(x) -->
+    <xacro:property name="imu_width" value="0.012" /> <!-- imu宽度(y) -->
+    <xacro:property name="imu_height" value="0.01" /> <!-- imu高度(z) -->
+    <xacro:property name="imu_x" value="-0.04" /> <!-- imu安装的x坐标 -->
+    <xacro:property name="imu_y" value="0.0" /> <!-- imu安装的y坐标 -->
+    <xacro:property name="imu_z" value="${base_link_length / 2 + imu_height / 2}" /> <!-- imu安装的z坐标:底盘高度 / 2 + imu高度 / 2  -->
+
+    <xacro:property name="imu_m" value="0.01" /> <!-- imu质量 -->
+
+    <!-- imu关节以及link -->
+    <link name="imu">
+        <visual>
+            <geometry>
+                <box size="${imu_length} ${imu_width} ${imu_height}" />
+            </geometry>
+            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${imu_length} ${imu_width} ${imu_height}" />
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </collision>
+        <xacro:Box_inertial_matrix m="${imu_m}" l="${imu_length}" w="${imu_width}" h="${imu_height}" />
+    </link>
+
+    <joint name="imu2base_link" type="fixed">
+        <parent link="base_link" />
+        <child link="imu" />
+        <origin xyz="${imu_x} ${imu_y} ${imu_z}" rpy="0.0 0.0 -1.5707963268" />
+    </joint>
+    <gazebo reference="imu">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+
+  <gazebo>  
+        <plugin name="imu" filename="libhector_gazebo_ros_imu.so">  
+            <updateRate>100.0</updateRate>  
+            <bodyName>imu</bodyName>
+            <gaussianNoise>0.001</gaussianNoise>
+            <accelDriftFrequency>1</accelDriftFrequency>
+            <accelDrift>0.0001</accelDrift>
+            <yawDriftFrequency>1</yawDriftFrequency>
+            <yawDrift>0.00001</yawDrift>
+            <accelOffset>0</accelOffset>
+        </plugin>  
+    </gazebo>
+
+
+</robot>

@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/devel
+
+Name: ieuagv_localization
+Description: Description of ieuagv_localization
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

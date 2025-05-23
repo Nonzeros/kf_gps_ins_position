@@ -1,0 +1,12 @@
+<!-- 组合小车底盘与摄像头与雷达 -->
+<robot name="modelCombine" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="inertial.xacro" />
+    <xacro:include filename="carBase.xacro" />
+    <xacro:include filename="camera.xacro" />
+    <xacro:include filename="ladar.xacro" />
+    <xacro:include filename="imu.xacro" />
+    <xacro:include filename="car_move.xacro" />
+    <xacro:include filename="gps_and_plugin.xacro" />
+    <xacro:include filename="plugins.xacro" />
+    <xacro:include filename="uwb_and_plugin.xacro" />
+</robot>

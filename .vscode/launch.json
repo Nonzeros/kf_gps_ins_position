@@ -1,0 +1,54 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ROS: Launch",
+            "request": "launch",
+            "target": "/home/ouyy/MyRosGuideCar/src/myguide/launch/gps_ins_path.launch",
+            "launch": [
+                "rviz",
+                "gz",
+                "gzclient",
+                "gzserver"
+            ],
+            "type": "ros"
+            
+        }
+    ]
+}
+
+
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//       {
+//         "name": "C/C++ Runner: Debug Session",
+//         "type": "cppdbg",
+//         "request": "launch",
+//         "args": [],
+//         "stopAtEntry": false,
+//         "externalConsole": false,
+//         "cwd": "/home/ouyy/MyRosGuideCar/devel/lib/myguide",
+//         "program": "/home/ouyy/MyRosGuideCar/devel/lib/myguide/test2",
+//         "MIMode": "gdb",
+//         "miDebuggerPath": "gdb",
+//         "setupCommands": [
+//           {
+//             "description": "Enable pretty-printing for gdb",
+//             "text": "-enable-pretty-printing",
+//             "ignoreFailures": true
+//           }
+
+//           // {
+//           //   "description": "防止 gdb 打开标准库函数",
+//           //   // "text": "-interpreter-exec console \"skip -rfu Matrix::.*\"",
+//           //   "text": "-interpreter-exec console \"skip -rfu *.h\"",
+//           //   "ignoreFailures": false
+//           // }
+//         ]
+//       }
+//     ]
+//   }

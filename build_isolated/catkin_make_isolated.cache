@@ -1,0 +1,2 @@
+basepart
+-DCMAKE_BUILD_TYPE=RelWithDebInfo -G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/ouyy/MyRosGuideCar/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/ouyy/MyRosGuideCar/install_isolated

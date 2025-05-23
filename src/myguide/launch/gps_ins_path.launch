@@ -1,0 +1,21 @@
+<launch>
+    <!-- <node pkg="myguide" type="imu_gps_gui" name="imu_gps_gui_path"/> -->
+    <!-- eskf组合导航 -->
+    <node pkg="myguide" type="eskftest" name="eskftest" output="log"/>
+    <!-- 真实位置路径输出 -->
+    <node pkg="myguide" type="getrealposition" name="getrealposition" output="log"/>
+    <!-- <node pkg="myguide" type="imu_gps_gui_justgps" name="justgps"/> -->
+    <!-- 惯导求解 -->
+    <!-- <node pkg="myguide" type="imuSolve" name="imuSolve"/> -->
+    <node pkg="myguide" type="uwbposition" name="uwbposition"/>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d /home/ouyy/MyRosGuideCar/src/myguide/configs/paths.rviz" required="true"/>
+    <!-- <include file="$(find pozyx_simulation)/launch/uwb_anchors_set.launch" /> -->
+
+    <!-- <include file="$(find pozyx_simulation)/launch/uwb_simulation_initializing.launch" /> -->
+    
+
+     <!-- 地图加载 -->
+    <arg name="map" default="garage.yaml" />
+    <!-- 运行地图服务器，并且加载设置的地图-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find basepart)/maps/$(arg map)"/>
+</launch>

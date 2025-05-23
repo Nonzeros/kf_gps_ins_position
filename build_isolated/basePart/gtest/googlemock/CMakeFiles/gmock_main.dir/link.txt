@@ -1,0 +1,1 @@
+/usr/lib/ccache/c++ -fPIC -O2 -g -DNDEBUG  -shared -Wl,-soname,libgmock_main.so -o ../lib/libgmock_main.so CMakeFiles/gmock_main.dir/src/gmock_main.cc.o  -Wl,-rpath,/home/ouyy/MyRosGuideCar/build_isolated/basePart/gtest/lib ../lib/libgmock.so ../lib/libgtest.so -lpthread 

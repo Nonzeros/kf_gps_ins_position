@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/install
+
+Name: server_client
+Description: Description of server_client
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

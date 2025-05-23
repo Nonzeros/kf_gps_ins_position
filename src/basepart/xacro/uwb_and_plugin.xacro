@@ -1,0 +1,53 @@
+<!-- tag_0相关的 xacro 文件 -->
+<robot name="my_tag_0" xmlns:xacro="http://wiki.ros.org/xacro">
+    <!-- tag_0属性 -->
+    <xacro:property name="tag_0_length" value="0.012" /> <!-- tag_0长度(x) -->
+    <xacro:property name="tag_0_width" value="0.012" /> <!-- tag_0宽度(y) -->
+    <xacro:property name="tag_0_height" value="0.01" /> <!-- tag_0高度(z) -->
+    <xacro:property name="tag_0_x" value="0.0" /> <!-- tag_0安装的x坐标 -->
+    <xacro:property name="tag_0_y" value="-0.3" /> <!-- tag_0安装的y坐标 -->
+    <xacro:property name="tag_0_z" value="${base_link_length / 2 + tag_0_height / 2}" /> <!-- tag_0安装的z坐标:底盘高度 / 2 + tag_0高度 / 2  -->
+
+    <xacro:property name="tag_0_m" value="0.01" /> <!-- tag_0质量 -->
+
+    <!-- tag_0关节以及link -->
+    <link name="tag_0">
+        <visual>
+            <geometry>
+                <box size="${tag_0_length} ${tag_0_width} ${tag_0_height}" />
+            </geometry>
+            <origin xyz="0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${tag_0_length} ${tag_0_width} ${tag_0_height}" />
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        </collision>
+        <xacro:Box_inertial_matrix m="${tag_0_m}" l="${tag_0_length}" w="${tag_0_width}" h="${tag_0_height}" />
+    </link>
+
+    <joint name="tag_02base_link" type="fixed">
+        <parent link="base_link" />
+        <child link="tag_0" />
+        <origin xyz="${tag_0_x} ${tag_0_y} ${tag_0_z}" rpy="0.0 0.0 0.0" />
+    </joint>
+
+    <gazebo reference="tag_0">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo>
+        <plugin name='libgtec_uwb_plugin' filename='libgtec_uwb_plugin.so'>
+            <update_rate>25</update_rate>
+            <nlosSoftWallWidth>0.25</nlosSoftWallWidth>
+            <tag_z_offset>1.5</tag_z_offset>
+            <tag_link>tag_0</tag_link>
+            <anchor_prefix>uwb_anchor</anchor_prefix>
+            <all_los>false</all_los>
+            <tag_id>0</tag_id>
+        </plugin>
+    </gazebo>
+    
+</robot>

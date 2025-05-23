@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/devel
+
+Name: pozyx_simulation
+Description: Description of pozyx_simulation
+Version: 0.0.1
+Cflags: -I/home/ouyy/MyRosGuideCar/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

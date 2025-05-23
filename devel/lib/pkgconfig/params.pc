@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/devel
+
+Name: params
+Description: Description of params
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

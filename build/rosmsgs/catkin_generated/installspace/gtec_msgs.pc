@@ -1,0 +1,8 @@
+prefix=/home/ouyy/MyRosGuideCar/install
+
+Name: gtec_msgs
+Description: Description of gtec_msgs
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

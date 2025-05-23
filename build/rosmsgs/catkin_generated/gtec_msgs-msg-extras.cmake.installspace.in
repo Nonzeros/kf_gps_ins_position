@@ -1,0 +1,2 @@
+set(gtec_msgs_MESSAGE_FILES "msg-ros1/GenericRanging.msg;msg-ros1/Ranging.msg;msg-ros1/UWBRanging.msg;msg-ros1/DWRanging.msg;msg-ros1/PozyxRanging.msg;msg-ros1/RangingDiff.msg;msg-ros1/PozyxRangingWithCir.msg;msg-ros1/ESP32S2FTMFrame.msg;msg-ros1/ESP32S2FTMRanging.msg;msg-ros1/ESP32S2FTMRangingExtra.msg;msg-ros1/RadarCube.msg;msg-ros1/RadarRangeAzimuth.msg;msg-ros1/RadarRangeDoppler.msg;msg-ros1/RadarFusedPointStamped.msg;msg-ros1/DoorCounterEvent.msg;msg-ros1/ZoneOccupancy.msg")
+set(gtec_msgs_SERVICE_FILES "")

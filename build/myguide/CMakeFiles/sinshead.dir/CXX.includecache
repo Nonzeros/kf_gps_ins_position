@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ouyy/MyRosGuideCar/src/myguide/src/PSINS.cpp
+PSINS.h
+/home/ouyy/MyRosGuideCar/src/myguide/src/PSINS.h
+io.h
+/home/ouyy/MyRosGuideCar/src/myguide/src/io.h
+

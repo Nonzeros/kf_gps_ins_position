@@ -1,0 +1,11 @@
+<launch>
+    
+    <!-- <node pkg="rviz" type="rviz" name="rviz"/> -->
+     <!-- 地图加载 -->
+    <arg name="map" default="garage.yaml" />
+    <!-- 运行地图服务器，并且加载设置的地图-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find basepart)/maps/$(arg map)"/>
+    
+    <node pkg="rviz" type="rviz" name="rviz" args="-d /home/ouyy/MyRosGuideCar/src/myguide/configs/rrtplanpath.rviz" required="true"/>
+    <node pkg="myguide" type="planningtest" name="planningtest"/>
+</launch>
